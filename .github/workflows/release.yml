@@ -25,18 +25,8 @@ jobs:
 
       - name: Build static binary for Linux amd64
         run: |
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o linodsync
           mkdir -p build
-          mv linodsync build/
-
-  release:
-    name: Create GitHub Release
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o build/linodsync
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v1
@@ -44,3 +34,5 @@ jobs:
           files: build/linodsync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
