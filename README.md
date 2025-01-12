@@ -78,7 +78,7 @@ This will generate a `linodsync.config.json` file with the following fields:
 Navigate to the project folder on the server and run:
 
 ```bash
-./linodsync --add
+<path_to_linodsync_folder_that_you_created>/linodsync --add
 ```
 A success message will confirm the addition, and a `backup_config.json` file will be generated, listing all projects added for backup.
 
