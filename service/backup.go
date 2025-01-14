@@ -37,7 +37,7 @@ func ExportDB(linodSyncConfig *appconfig.LinodSyncConfig, tmpFolder string) {
 	folderPath := tmpFolder + "/" + linodSyncConfig.ZipFileName
 	os.Mkdir(folderPath, os.ModePerm)
 	sqlFile := fmt.Sprintf("%s/%s.sql", folderPath, linodSyncConfig.Database.DatabaseName)
-	cmdStr := fmt.Sprintf("mysqldump -u%s -p%s  %s > %s", linodSyncConfig.Database.Username, linodSyncConfig.Database.Password, linodSyncConfig.Database.DatabaseName, sqlFile)
+	cmdStr := fmt.Sprintf("mysqldump -u%s -p%s -h%s %s > %s", linodSyncConfig.Database.Username, linodSyncConfig.Database.Password, linodSyncConfig.Database.Host, linodSyncConfig.Database.DatabaseName, sqlFile)
 	cmd := exec.Command("bash", "-c", cmdStr)
 	err := cmd.Run()
 	if err != nil {
