@@ -5,7 +5,7 @@ Linodsync is a Go-based application designed to back up your project directories
 1. Create a directory for linodsync and download the pre-compiled binary into the server:
 ```bash
    mkdir linodsync && cd linodsync
-   wget https://github.com/sanda0/linodsync/releases/download/v1.0.0/linodsync
+   wget https://github.com/sanda0/linodsync/releases/download/v1.0.1/linodsync
 ```
 2. Make the binary executable by setting the executable permissions:
 ```bash
